@@ -1,0 +1,71 @@
+<!-- Developed by Lapis Techologies aka Lapis Pheonix -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speecherizor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body>
+  <div class="banner">
+    <h1><a href="/">Speecherizor</a></h1>
+    <h2>The simplest and accurate word count guesser.</h2>
+  </div>
+  <div class="section">
+    <div id="loading" class="hidden">
+      <div class="spinner"></div>
+      <h2>Performing magic...</h2>
+    </div>
+    <div id="time">
+      <h1>Speech Length</h1>
+      <h2>Please set how long you'd like your speech to be.</h2>
+      <div class="options">
+        <div class="option">
+          <label for="hours">Hours</label>
+          <input type="number" min="0" max="99" value="0" id="hours"/>
+        </div>
+        <div class="option">
+          <label for="minutes">Minutes</label>
+          <input type="number" min="0" max="59" value="4" id="minutes"/>
+        </div>
+        <div class="option">
+          <label for="seconds">Seconds</label>
+          <input type="number" min="0" max="59" value="0" id="seconds"/>
+        </div>
+      </div>
+      <button id="next">Next</button>
+    </div>
+    <div id="submit" class="hidden">
+      <h1>Upload Audio</h1>
+      <h2>Upload your audio. Please make sure your voice is clear, and is the only voice in the audio.</h2>
+
+      <div id="upload-area" class="upload-area">
+        <p>Click or Drag an audio file here to upload</p>
+        <input type="file" id="file-input" accept=".wav"/>
+      </div>
+    </div>
+    <div id="results" class="hidden">
+      <p>Placeholder</p>
+    </div>
+  </div>
+
+  <div class="footer" id="footer">
+    <ul>
+      <li>
+        <a href="https://github.com/LapisPhoenix/Speecherizor">
+          <img src="{{ url_for('static', filename='assets/github.svg') }}" class="invert" alt="source code" width="50">
+        </a>
+      </li>
+      <li>
+        <p>MIT License</p>
+      </li>
+      <li>
+        <p>Created by Lapis Pheonix</p>
+      </li>
+    </ul>
+  </div>
+
+  <script src="{{ url_for('static', filename='upload.js') }}"></script>
+</body>
+</html>
